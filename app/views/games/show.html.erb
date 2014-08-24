@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Appid:</strong>
+  <%= @game.appid %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @game.name %>
+</p>
+
+<p>
+  <strong>Playtime forever:</strong>
+  <%= @game.playtime_forever %>
+</p>
+
+<p>
+  <strong>Icon url:</strong>
+  <%= @game.icon_url %>
+</p>
+
+<p>
+  <strong>Logo url:</strong>
+  <%= @game.logo_url %>
+</p>
+
+<p>
+  <strong>Has community visible stats:</strong>
+  <%= @game.has_community_visible_stats %>
+</p>
+
+<%= link_to 'Edit', edit_game_path(@game) %> |
+<%= link_to 'Back', games_path %>

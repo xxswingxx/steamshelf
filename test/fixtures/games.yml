@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  appid: 1
+  name: MyString
+  playtime_forever: 1
+  icon_url: MyString
+  logo_url: MyString
+  has_community_visible_stats: false
+
+two:
+  appid: 1
+  name: MyString
+  playtime_forever: 1
+  icon_url: MyString
+  logo_url: MyString
+  has_community_visible_stats: false
