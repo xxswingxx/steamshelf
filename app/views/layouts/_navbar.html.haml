@@ -10,24 +10,9 @@
       %a.navbar-brand{:href => "#"} Steamshelf
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
+
       %ul.nav.navbar-nav.navbar-right
-        %li.dropdown
-          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
-            = current_user.present? ? "Hello #{current_user.steam_name}!" : link_to('Sign_in', new_user_session_path)
-            %span.caret
-
-          - if current_user.present?
-            %ul.dropdown-menu{:role => "menu"}
-              %li
-                %a{:href => "#"} Action
-              %li
-                %a{:href => "#"} Another action
-              %li
-                %a{:href => "#"} Something else here
-              %li.divider
-              %li
-                %a{:href => "#"}= link_to('Sign out', destroy_user_session_path, method: :delete)
-
+        %li= link_to('Check another user', new_user_path)
     / /.navbar-collapse
   / /.container-fluid
 

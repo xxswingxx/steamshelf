@@ -1,7 +1,18 @@
 class User < ActiveRecord::Base
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  has_many :games
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+  include ActiveModel::ForbiddenAttributesProtection
+  
+  validates :steam_name, uniqueness: true
+
+  before_save :set_steam_id
+
+  def set_steam_id
+    if steam_id.blank?
+      response = HTTParty.get("http://steamcommunity.com/id/#{steam_name}/?xml=1").parsed_response
+      if response['profile'].present? 
+        self.steam_id = response['profile']['steamID64']
+      else
+        false
+      end
+    end
+  end
 end

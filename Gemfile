@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'cancancan', '1.9.2'
-gem 'devise', '3.3.0'
 gem 'haml', '4.0.5'
 gem 'httparty', '0.13.1'
+gem 'pg'
 gem 'rails', '4.1.5'
 gem 'rails-observers', '0.1.2'
 gem 'simple_form', '3.0.2'
@@ -11,10 +11,11 @@ gem 'sucker_punch', '1.1'
 gem 'therubyracer', '0.12.1'
 gem 'less-rails', '2.5.0'
 gem 'twitter-bootstrap-rails', '3.2.0'
+gem 'unicorn-rails', group: [:develpment] # Use unicorn as the app server
+gem 'unicorn', group: [:production]
 
 gem 'byebug', group: [:development, :test]
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
