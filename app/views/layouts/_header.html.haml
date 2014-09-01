@@ -1,4 +1,5 @@
 - if current_user
+  = "Hello #{current_user.steam_name}!"
   = link_to('Sign out', destroy_user_session_path, method: :delete)
 - else
   = link_to('Sign_in', new_user_session_path)

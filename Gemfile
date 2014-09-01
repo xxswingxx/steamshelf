@@ -12,6 +12,7 @@ gem 'therubyracer', '0.12.1'
 gem 'less-rails', '2.5.0'
 gem 'twitter-bootstrap-rails', '3.2.0'
 
+gem 'byebug', group: [:development, :test]
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets

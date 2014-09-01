@@ -5,7 +5,9 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
-    @games = Game.all
+    response = HTTParty.get("http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=#{Rails.application.secrets.steam_api_key}&steamid=#{current_user.steam_id}&include_appinfo=1&format=json")
+    @json_games = response.parsed_response['response']
+    @games = current_user.games
   end
 
   # GET /games/1

@@ -23,6 +23,6 @@ module Steamshelf
       g.template_engine :haml
     end
 
-    config.observers = :user_observer
+    config.active_record.observers = :user_observer
   end
 end

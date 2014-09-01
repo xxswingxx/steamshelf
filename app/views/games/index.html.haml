@@ -1,0 +1,12 @@
+.title
+  %h1 Listing games
+.games-list
+  %ul.row
+    - @json_games['games'].each do |game|
+      %li.game.col-lg-2.col-md-2.col-sm-3.col-xs-4
+        //
+        //%li= game['playtime_forever']
+        //%li= image_tag "http://media.steampowered.com/steamcommunity/public/images/apps/#{game['appid']}/#{game['img_icon_url']}.jpg"
+        = link_to(image_tag( "http://media.steampowered.com/steamcommunity/public/images/apps/#{game['appid']}/#{game['img_logo_url']}.jpg", title: game['name'], data: {toggle: "tooltip", placement: "bottom" }, class: 'logo'), "steam://run/#{game['appid']}")
+  %br/
+= link_to 'New Game', new_user_game_path(current_user)
