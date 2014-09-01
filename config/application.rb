@@ -21,6 +21,8 @@ module Steamshelf
     # config.i18n.default_locale = :de
     config.generators do |g|
       g.template_engine :haml
-    end    
+    end
+
+    config.observers = :user_observer
   end
 end
