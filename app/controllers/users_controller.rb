@@ -5,8 +5,10 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user.save if !@user.persisted?
-    redirect_to user_games_path(@user)
+    if !@user.persisted?
+      return redirect_to(new_user_path, alert: 'The user doesn\'t exist') if !@user.save
+    end
+    redirect_to(user_games_path(@user))
   end
 
   def show
