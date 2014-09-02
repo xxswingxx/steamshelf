@@ -31,5 +31,6 @@ $(document).ready ()->
 
     return
 
-  $('#played-v-never').click () ->
+  $('#played-v-never').click (e) ->
+    e.preventDefault()
     $('#charts').slideToggle()
