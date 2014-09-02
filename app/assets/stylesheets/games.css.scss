@@ -3,16 +3,44 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+#main {
+  background-color: #FFFF;	
+}
+
+#main-header {
+  padding-left: 20px;
+  padding-top: 40px;
+  padding-bottom: 10px;
+  color: white;
+  text-shadow: 5px 5px black;
+  background-image: url('/assets/header_gradient_blue.jpg');
+}
+
+#main-header .header #avatar img{
+   box-shadow: 5px 5px 5px black;
+}
+
+#main-header img {
+  width: 80px;
+  height: 80px;
+}
 .games-list ul {         
   padding:0 0 0 0;
   margin:0 0 0 0;
 }
 .games-list ul li {
-
   list-style:none;
   margin-bottom:25px;           
 }
 .games-list ul li img {
-  box-shadow: 10px 10px 5px #888888;
+  box-shadow: 10px 10px 5px grey;
   cursor: pointer;
+}
+
+ul.charts-pills {
+  padding-bottom: 20px;	
+}
+
+#charts.row {
+  display: none;
 }

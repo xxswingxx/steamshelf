@@ -4,13 +4,14 @@
     %title Steamshelf
     = javascript_include_tag "https://www.google.com/jsapi"
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %header.navbar.navbar-fixed-top
-      %nav= render '/layouts/navbar'
+    %nav.navbar.navbar-fixed-top= render '/layouts/navbar'
+    %header
+      #main-header= yield :header
 
   #main{:role => "main"}
     .container-fluid
       .row
         .col-md-12= yield
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true

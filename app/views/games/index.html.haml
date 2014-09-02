@@ -1,24 +1,31 @@
 - if @games.present?
-  .title
-    %h1= "#{@user.steam_name}'s games (#{@games['game_count']})"
-  .row
-    .col-md-2= image_tag @user.avatar
-    .col-md-5
+  - content_for :header do
+    .row.header
+      .col-md-12
+        .title
+          %h1
+            %span#avatar= image_tag @user.avatar
+            = "#{@user.steam_name.capitalize}'s games (#{@games['game_count']})"
+
+  %ul.nav.nav-pills.charts-pills
+    %li.active
+      = link_to 'The pie of the shame', '#', id: 'played-v-never'
+
+  #charts.row
+    .col-md-7
       #chart_div{ data: { total: @games['game_count'], never_played: @pile_of_shame } }
     .col-md-5
-- else
-  .title
-    // TODO: FIX UGLINESS
-    %h1= "#{@user.steam_name}'s games" 
 
-.games-list
-  - if @games.present?
+  .games-list
     %ul.row
       - @games['games'].each do |game|
         %li.game.col-lg-2.col-md-2.col-sm-3.col-xs-4{ data: { name: numeric?(game['name']) ?  "#{game['name']}_A" : game['name'].upcase } }
           - image_url = game['img_logo_url'].present? ?  "http://media.steampowered.com/steamcommunity/public/images/apps/#{game['appid']}/#{game['img_logo_url']}.jpg" : "empty.jpg"
           = link_to(image_tag(image_url, title: game['name'], data: {toggle: "tooltip", placement: "bottom" }, class: 'logo'), "steam://run/#{game['appid']}")
     %br/
-  - else
+
+- else
+  .title
+    %h1= "#{@user.steam_name}'s games" 
     .row
       .col-md-12 Sorry, we couldn't retrieve any data. Maybe you entered a wrong steam username?

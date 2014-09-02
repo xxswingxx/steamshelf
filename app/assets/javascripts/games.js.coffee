@@ -17,7 +17,7 @@ sortList = (options) ->
     mylist.append itm
     return
 
-$(document).ready ()->  
+$(document).ready ()-> 
   $('.logo').tooltip()
   sortList('alphabetically')
 
@@ -30,3 +30,6 @@ $(document).ready ()->
       return
 
     return
+
+  $('#played-v-never').click () ->
+    $('#charts').slideToggle()
