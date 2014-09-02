@@ -2,9 +2,10 @@
   .title
     %h1= "#{@user.steam_name}'s games (#{@games['game_count']})"
   .row
-    .col-md-9
+    .col-md-2= image_tag @user.avatar
+    .col-md-5
       #chart_div{ data: { total: @games['game_count'], never_played: @pile_of_shame } }
-    .col-md-3
+    .col-md-5
 - else
   .title
     // TODO: FIX UGLINESS
