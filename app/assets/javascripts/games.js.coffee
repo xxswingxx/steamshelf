@@ -19,7 +19,7 @@ sortList = (options) ->
 
 $(document).ready ()-> 
   $('.logo').tooltip()
-  sortList('alphabetically')
+ 
 
   # Filter games
   $("#search").keyup ()->
