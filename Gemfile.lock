@@ -48,6 +48,7 @@ GEM
     debugger-linecache (1.2.0)
     erubis (2.7.0)
     execjs (2.2.1)
+    googlecharts (1.6.8)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -175,6 +176,7 @@ DEPENDENCIES
   byebug
   cancancan (= 1.9.2)
   coffee-rails (~> 4.0.0)
+  googlecharts
   haml (= 4.0.5)
   haml-rails (= 0.5.3)
   httparty (= 0.13.1)

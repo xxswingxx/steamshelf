@@ -17,8 +17,7 @@ sortList = (options) ->
     mylist.append itm
     return
 
-
-$(document).ready ()->
+$(document).ready ()->  
   $('.logo').tooltip()
   sortList('alphabetically')
 

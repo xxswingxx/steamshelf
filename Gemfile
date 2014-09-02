@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'cancancan', '1.9.2'
+gem 'googlecharts'
 gem 'haml', '4.0.5'
 gem 'httparty', '0.13.1'
 gem 'pg'

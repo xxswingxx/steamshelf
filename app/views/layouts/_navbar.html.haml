@@ -10,9 +10,12 @@
       %a.navbar-brand{:href => "#"} Steamshelf
     / Collect the nav links, forms, and other content for toggling
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
-
       %ul.nav.navbar-nav.navbar-right
         %li= link_to('Check another user', new_user_path)
+      - if @games.present?
+        %form{ class: 'navbar-form navbar-right', role: "search"}
+          .form-group
+            %input#search.form-control{:placeholder => "Filter games", :type => "text"}/
     / /.navbar-collapse
   / /.container-fluid
 

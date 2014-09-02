@@ -7,10 +7,12 @@
   padding:0 0 0 0;
   margin:0 0 0 0;
 }
-.games-list ul li {     
+.games-list ul li {
+
   list-style:none;
   margin-bottom:25px;           
 }
 .games-list ul li img {
+  box-shadow: 10px 10px 5px #888888;
   cursor: pointer;
 }
