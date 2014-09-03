@@ -23,7 +23,7 @@ $(document).ready ()->
 
   # Filter games
   $("#search").keyup ()->
-    regex = new Regex ($(this).val(), 'i')
+    regex = new RegExp($(this).val(), 'i')
     $(".games-list ul>li").each ->
       text = $(this).data('name').toLowerCase()
       (if (text.match(regex) != null) then $(this).fadeIn(600) else $(this).fadeOut(600))
